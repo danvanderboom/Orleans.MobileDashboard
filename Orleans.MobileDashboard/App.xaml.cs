@@ -1,28 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 
 using Xamarin.Forms;
 
 namespace Orleans.MobileDashboard
 {
-	public class App : Application
+	public partial class App : Application
 	{
 		public App ()
 		{
 			// The root page of your application
-			var content = new ContentPage {
-				Title = "Orleans.MobileDashboard",
-				Content = new StackLayout {
-					VerticalOptions = LayoutOptions.Center,
-					Children = {
-						new Label {
-							HorizontalTextAlignment = TextAlignment.Center,
-							Text = "Welcome to Xamarin Forms!"
-						}
-					}
-				}
-			};
-
-			MainPage = new NavigationPage (content);
+			MainPage = new MasterPage ();
 		}
 
 		protected override void OnStart ()

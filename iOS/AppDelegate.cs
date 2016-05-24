@@ -16,6 +16,11 @@ namespace Orleans.MobileDashboard.iOS
 
 			LoadApplication (new App ());
 
+			// reference themes
+			var x = typeof (Xamarin.Forms.Themes.DarkThemeResources);
+			x = typeof (Xamarin.Forms.Themes.LightThemeResources);
+			x = typeof (Xamarin.Forms.Themes.iOS.UnderlineEffect);
+
 			return base.FinishedLaunching (app, options);
 		}
 	}
