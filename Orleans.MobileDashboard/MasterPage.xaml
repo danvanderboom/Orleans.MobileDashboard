@@ -6,6 +6,6 @@
 	x:Class="Orleans.MobileDashboard.MasterPage">
 	
 	<ContentPage.Content>
-		<local:LoginView/>
+		<local:ClusterMapView/>
 	</ContentPage.Content>
 </ContentPage>
