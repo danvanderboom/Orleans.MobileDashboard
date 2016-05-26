@@ -12,7 +12,7 @@ Due to the high level of overlap between Orleans and Azure Service Fabric, exten
 ### Audience
 This dashboard can be used in development and QA environments where it would be used primarily by development and infrastructure teams, or it could be deployed into production systems as well.
 
-### Basic Use Cases
+### Use Cases
 - Add cluster connection - login to cluster management/monitoring service hosted in a cluster, offer to cache credentials
 - View cluster details - static configuration data and dynamic (streaming) metrics
 - View silo/node details - static configuration data and dynamic (streaming) metrics
