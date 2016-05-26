@@ -10,7 +10,7 @@ Allow operations staff and developers to:
 Due to the high level of overlap between Orleans and Azure Service Fabric, extending this dashboard to connect to either system would likely provide value to a much larger audience for a small additional investment in development.
 
 ### Audience
-This dashboard can be used in development and QA environments where it would be used primarily by development and infrastructure teams, or it could be deployed into production systems as well.
+This dashboard can be used in development and QA environments where it would be used primarily by developers, or it could be deployed into production systems as well where it could be used by infrastructure/operations teams.
 
 ### Use Cases
 - Add cluster connection - login to cluster management/monitoring service hosted in a cluster, offer to cache credentials
