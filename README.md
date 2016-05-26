@@ -23,3 +23,5 @@ This dashboard can be used in development and QA environments where it would be 
 
 More features TBD. Open to input from others.
 
+### Alpha Warning
+Not only is this project mega-alpha (just a UI layout prototype at this point), but it's also using the Alpha channel for Xamarin tools and Xamarin.Forms libraries. So if you're looking to build the code, you'll need those. This applies to Xamarin Studio on Mac as well as Visual Studio or Xamarin Studio on Windows.
