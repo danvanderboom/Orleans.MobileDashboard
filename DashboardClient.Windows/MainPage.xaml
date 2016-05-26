@@ -1,8 +1,8 @@
 ﻿<forms:WindowsPage
-    x:Class="Orleans.MobileDashboard.Windows.MainPage"
+    x:Class="DashboardClient.Windows.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Orleans.MobileDashboard.Windows"
+    xmlns:local="using:DashboardClient.Windows"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:forms="using:Xamarin.Forms.Platform.UWP"

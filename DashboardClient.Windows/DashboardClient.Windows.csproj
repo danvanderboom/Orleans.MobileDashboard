@@ -127,7 +127,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Orleans.MobileDashboard\Orleans.MobileDashboard.csproj">
+    <ProjectReference Include="..\DashboardClient\DashboardClient.csproj">
       <Project>{c31448fb-0658-4ca1-adc6-073501781bd0}</Project>
       <Name>Orleans.MobileDashboard</Name>
     </ProjectReference>
