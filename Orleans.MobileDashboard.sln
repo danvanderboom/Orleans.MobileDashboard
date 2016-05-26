@@ -2,13 +2,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orleans.MobileDashboard", "Orleans.MobileDashboard\Orleans.MobileDashboard.csproj", "{C31448FB-0658-4CA1-ADC6-073501781BD0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashboardClient", "DashboardClient\DashboardClient.csproj", "{C31448FB-0658-4CA1-ADC6-073501781BD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orleans.MobileDashboard.iOS", "iOS\Orleans.MobileDashboard.iOS.csproj", "{4475863C-FAC6-468D-B26F-57132FF0DAD8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashboardClient.iOS", "DashboardClient.iOS\DashboardClient.iOS.csproj", "{4475863C-FAC6-468D-B26F-57132FF0DAD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orleans.MobileDashboard.Droid", "Droid\Orleans.MobileDashboard.Droid.csproj", "{51D5B7D3-CC08-44F9-BAA4-A9E00EFC6AAF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashboardClient.Droid", "DashboardClient.Droid\DashboardClient.Droid.csproj", "{51D5B7D3-CC08-44F9-BAA4-A9E00EFC6AAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orleans.MobileDashboard.Windows", "Orleans.MobileDashboard.Windows\Orleans.MobileDashboard.Windows.csproj", "{C2BE9E3C-11BE-420B-B1CE-ADE7213B699A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashboardClient.Windows", "DashboardClient.Windows\DashboardClient.Windows.csproj", "{C2BE9E3C-11BE-420B-B1CE-ADE7213B699A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

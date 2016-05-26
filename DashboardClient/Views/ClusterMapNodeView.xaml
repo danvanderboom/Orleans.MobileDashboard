@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:dark="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Dark"
+	xmlns:local="clr-namespace:DashboardClient.Views;assembly=DashboardClient"
+	x:Class="DashboardClient.Views.ClusterMapNodeView"
+	BackgroundColor="Black">
+
+	<ContentView.Resources>
+    	<ResourceDictionary MergedWith="dark:DarkThemeResources" />
+	</ContentView.Resources>
+	
+	<ContentView.Content>
+		<ContentView BackgroundColor="Silver" Padding="2">
+			<ContentView BackgroundColor="Black" Padding="2">
+				<BoxView Grid.Row="0" Color="Green"/>
+			</ContentView>
+			
+			<!--<Grid BackgroundColor="Black" Padding="4" RowSpacing="2">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+
+				<ContentView Grid.Row="0" Padding="4">
+					<Label x:Name="NodeNameLabel" Text="Node1" StyleClass="Header" IsVisible="false"/>
+				</ContentView>
+
+				<ContentView Grid.Row="1" Padding="4">
+					<Label x:Name="NodeTypeLabel" Text="NodeTypeA" StyleClass="Header" IsVisible="false"/>
+				</ContentView>
+
+				<BoxView Grid.Row="0" Color="Green" VerticalOptions="Fill" HorizontalOptions="Fill"/>
+			</Grid>-->
+		</ContentView>
+	</ContentView.Content>
+</ContentView>
