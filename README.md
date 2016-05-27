@@ -12,6 +12,9 @@ Due to the high level of overlap between Orleans and Azure Service Fabric, exten
 ### Audience
 This dashboard can be used in development and QA environments where it would be used primarily by developers, or it could be deployed into production systems as well where it could be used by infrastructure/operations teams.
 
+### Design (UI/UX)
+Design is being done in the open. Design documents (currently photos of whiteboard sketches) provide a general idea of this project's current direction, and can be found in the [Design folder](https://github.com/danvanderboom/Orleans.MobileDashboard/tree/master/Design) of this repository. Suggestions and ideas are welcome.
+
 ### Use Cases
 - Add cluster connection - login to cluster management/monitoring service hosted in a cluster, offer to cache credentials
 - View cluster details - static configuration data and dynamic (streaming) metrics
