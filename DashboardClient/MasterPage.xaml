@@ -6,18 +6,19 @@
 	x:Class="DashboardClient.MasterPage">
 	
 	<ContentPage.Content>
-		<Grid RowSpacing="0">
+		<Grid x:Name="RootLayout" RowSpacing="0" ColumnSpacing="0">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="*"/>
 				<RowDefinition Height="50"/>
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="80"/>
 			</Grid.ColumnDefinitions>
 
-			<local:ClusterDashboardView Grid.Row="0"/>
+			<ContentView x:Name="CurrentViewFrame" Grid.Row="0" Grid.ColumnSpan="2"/>
 
-			<local:MainMenuBarView Grid.Row="1"/>
+			<ContentView x:Name="MenuBarFrame" Grid.Row="1" Grid.ColumnSpan="2"/>
 		</Grid>
 	</ContentPage.Content>
 </ContentPage>

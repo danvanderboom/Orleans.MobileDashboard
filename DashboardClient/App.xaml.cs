@@ -10,7 +10,10 @@ namespace DashboardClient
 		public App ()
 		{
 			// The root page of your application
-			MainPage = new MasterPage ();
+			//MainPage = new MasterPage ();
+
+			var bs = new Bootstrapper ();
+			bs.Run (this);
 		}
 
 		protected override void OnStart ()

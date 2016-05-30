@@ -10,4 +10,16 @@ public static class GridExtensions
 		Grid.SetRowSpan (view, rowSpan);
 		Grid.SetColumnSpan (view, columnSpan);
 	}
+
+	public static void SetGridRow (this BindableObject view, int row, int rowSpan = 1)
+	{
+		Grid.SetRow (view, row);
+		Grid.SetRowSpan (view, rowSpan);
+	}
+
+	public static void SetGridColumn (this BindableObject view, int column, int columnSpan = 1)
+	{
+		Grid.SetColumn (view, column);
+		Grid.SetColumnSpan (view, columnSpan);
+	}
 }
