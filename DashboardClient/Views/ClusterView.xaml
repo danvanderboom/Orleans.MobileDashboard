@@ -2,8 +2,45 @@
 <ContentView 
 	xmlns="http://xamarin.com/schemas/2014/forms" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:local="clr-namespace:DashboardClient.Views;assembly=DashboardClient"
 	x:Class="DashboardClient.Views.ClusterView">
+
+	<!--xmlns:dark="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Dark"-->
 	
+	<ContentView.Resources>
+<!--    	<ResourceDictionary MergedWith="dark:DarkThemeResources">-->
+    	<ResourceDictionary>
+			<Style TargetType="Label">
+				<Setter Property="TextColor" Value="Black"/>
+				<Setter Property="HorizontalTextAlignment" Value="Center"/>
+			</Style>
+		</ResourceDictionary>
+	</ContentView.Resources>
+
 	<ContentView.Content>
+		<Grid x:Name="RootGrid" RowSpacing="0" ColumnSpacing="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<ContentView Grid.Column="0" Padding="20,0,20,0">
+				<StackLayout VerticalOptions="Center">
+					<Label Text="Cluster Name" StyleClass="Header"/>
+					<Label Text="version 1.2.3"/>
+				</StackLayout>
+			</ContentView>
+
+			<ContentView Grid.Column="2" Padding="20,0,20,0" BackgroundColor="Green">
+				<StackLayout VerticalOptions="Center">
+					<Label Text="Health" StyleClass="Header"/>
+					<Label Text="Indicator" StyleClass="Header"/>
+				</StackLayout>
+			</ContentView>
+		</Grid>
 	</ContentView.Content>
 </ContentView>

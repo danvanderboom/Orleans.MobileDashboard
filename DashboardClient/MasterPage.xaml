@@ -6,6 +6,18 @@
 	x:Class="DashboardClient.MasterPage">
 	
 	<ContentPage.Content>
-		<local:ClusterMapView/>
+		<Grid RowSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="50"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+
+			<local:ClusterDashboardView Grid.Row="0"/>
+
+			<local:MainMenuBarView Grid.Row="1"/>
+		</Grid>
 	</ContentPage.Content>
 </ContentPage>

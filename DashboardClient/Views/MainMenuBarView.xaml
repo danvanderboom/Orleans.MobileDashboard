@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="DashboardClient.Views.MainMenuBarView">
+	
+	<ContentView.Content>
+		<Grid ColumnSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+
+			<BoxView Grid.Column="0" Color="Aqua"/>
+			<BoxView Grid.Column="1" Color="Fuchsia"/>
+			<BoxView Grid.Column="2" Color="Blue"/>
+			<BoxView Grid.Column="3" Color="Maroon"/>
+		</Grid>
+	</ContentView.Content>
+</ContentView>

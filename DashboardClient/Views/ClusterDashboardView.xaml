@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:dark="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Dark"
+	xmlns:local="clr-namespace:DashboardClient.Views;assembly=DashboardClient"
+	x:Class="DashboardClient.Views.ClusterDashboardView">
+
+	<ContentView.Resources>
+<!--    	<ResourceDictionary MergedWith="dark:DarkThemeResources">-->
+    	<ResourceDictionary>
+    		<Style TargetType="Label">
+				<Setter Property="TextColor" Value="Black"/>
+				<Setter Property="HorizontalTextAlignment" Value="Center"/>
+			</Style>
+		</ResourceDictionary>
+	</ContentView.Resources>
+	
+	<ContentView.Content>
+		<Grid x:Name="RootGrid" RowSpacing="0" ColumnSpacing="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="80"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="100"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<local:ClusterView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+			<Grid Grid.Row="1" Grid.Column="0" BackgroundColor="Blue" RowSpacing="0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="40"/>
+					<RowDefinition Height="40"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+				
+				<Label Grid.Row="0" Text="Silo" TextColor="White" VerticalTextAlignment="Center"/>
+				<Label Grid.Row="1" Text="Version" TextColor="White" VerticalTextAlignment="Center"/>
+				<Label Grid.Row="2" Text="CPU" TextColor="White" VerticalTextAlignment="Center"/>
+				<Label Grid.Row="3" Text="Memory" TextColor="White" VerticalTextAlignment="Center"/>
+				<Label Grid.Row="4" Text="Grains" TextColor="White" VerticalTextAlignment="Center"/>
+			</Grid>
+
+			<ScrollView Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+				<StackLayout Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand">
+					<local:SiloView Orientation="Vertical" HeightRequest="100" WidthRequest="100"/>
+					<local:SiloView Orientation="Vertical" HeightRequest="100" WidthRequest="100"/>
+					<local:SiloView Orientation="Vertical" HeightRequest="100" WidthRequest="100"/>
+					<local:SiloView Orientation="Vertical" HeightRequest="100" WidthRequest="100"/>
+					<local:SiloView Orientation="Vertical" HeightRequest="100" WidthRequest="100"/>
+					<local:SiloView Orientation="Vertical" HeightRequest="100" WidthRequest="100"/>
+				</StackLayout>
+			</ScrollView>
+		</Grid>
+	</ContentView.Content>
+</ContentView>
