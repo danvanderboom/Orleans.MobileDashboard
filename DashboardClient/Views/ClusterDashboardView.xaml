@@ -41,7 +41,7 @@
 					<RowDefinition Height="*"/>
 				</Grid.RowDefinitions>
 				
-				<Label Grid.Row="0" Text="Silo" TextColor="White" VerticalTextAlignment="Center"/>
+				<Label Grid.Row="0" Text="Resource" TextColor="White" VerticalTextAlignment="Center"/>
 				<Label Grid.Row="1" Text="Version" TextColor="White" VerticalTextAlignment="Center"/>
 				<Label Grid.Row="2" Text="CPU" TextColor="White" VerticalTextAlignment="Center"/>
 				<Label Grid.Row="3" Text="Memory" TextColor="White" VerticalTextAlignment="Center"/>
