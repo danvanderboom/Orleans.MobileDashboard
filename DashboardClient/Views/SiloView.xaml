@@ -4,7 +4,8 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 	xmlns:dark="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Dark"
 	xmlns:local="clr-namespace:DashboardClient.Views;assembly=DashboardClient"
-	x:Class="DashboardClient.Views.SiloView">
+	x:Class="DashboardClient.Views.SiloView"
+	BackgroundColor="Silver">
 
 	<ContentView.Resources>
 		<ResourceDictionary>

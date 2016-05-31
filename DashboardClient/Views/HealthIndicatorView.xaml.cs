@@ -63,7 +63,13 @@ namespace DashboardClient.Views
 
 					//canvas.DrawPath (path, paint);
 
-					DrawArc (canvas, paint, 0, 90);
+
+					//DrawArc (canvas, paint, 0, 90);
+
+
+					//DrawCircle (canvas, paint, width / 2, height / 2, width / 2 - 4);
+					DrawArcFromTo (canvas, paint, width / 2, height / 2, width / 2 - 4, 10, 90);
+					DrawArcFromTo (canvas, paint, width / 2, height / 2, (int)((width / 2 - 4) * 0.8), 10, 90);
 
 					return surface.Snapshot ();
 				}
@@ -135,6 +141,7 @@ namespace DashboardClient.Views
 			double angleInRadians = angleInDegrees * (Math.PI / 180);
 			double cosTheta = Math.Cos (angleInRadians);
 			double sinTheta = Math.Sin (angleInRadians);
+
 			return new SKPoint 
 			{
 				X =
@@ -146,6 +153,112 @@ namespace DashboardClient.Views
 					(sinTheta * (pointToRotate.X - centerPoint.X) +
 					cosTheta * (pointToRotate.Y - centerPoint.Y) + centerPoint.Y)
 			};
+		}
+
+		void DrawCircle (SKCanvas canvas, SKPaint paint, int xc, int yc, int radius)
+		{
+			if (radius <= 0)
+				return;
+			
+			int x = radius;
+			int y = 0;
+			int cd2 = 0;
+
+			var points = new List<SKPoint> ();
+			points.Add (new SKPoint (xc - radius, yc));
+			points.Add (new SKPoint (xc + radius, yc));
+			points.Add (new SKPoint (xc, yc - radius));
+			points.Add (new SKPoint (xc, yc + radius));
+
+			while (x > y)
+			{
+				cd2 -= (--x) - (++y);
+
+				if (cd2 < 0) 
+					cd2 += x++;
+
+				// 8 octants - listed clockwise
+
+				// right hemisphere, starting at the top
+				points.Add (new SKPoint (xc + y, yc - x));
+				points.Add (new SKPoint (xc + x, yc - y));
+				points.Add (new SKPoint (xc + x, yc + y));
+				points.Add (new SKPoint (xc + y, yc + x));
+
+				// left hemisphere, continuing around from the bottom
+				points.Add (new SKPoint (xc - y, yc + x));
+				points.Add (new SKPoint (xc - x, yc + y));
+				points.Add (new SKPoint (xc - x, yc - y));
+				points.Add (new SKPoint (xc - y, yc - x));
+			}
+
+			canvas.DrawPoints (SKPointMode.Points, points.ToArray (), paint);
+		}
+
+		void DrawArcFromTo (SKCanvas canvas, SKPaint paint, int xc, int yc, int radius, 
+		                    float startAngleInDegrees, float endAngleInDegrees)
+		{
+			if (radius <= 0)
+				return;
+
+			int x = radius;
+			int y = 0;
+			int cd2 = 0;
+
+
+
+			// convert degrees to radians
+			var startAngleRadians = startAngleInDegrees * Math.PI / 180;
+			var endAngleRadians = endAngleInDegrees * Math.PI / 180;
+
+			// find x,y coordinates for start and end points
+			var startx = xc + radius * (float)Math.Cos (startAngleRadians);
+			var starty = yc + radius * (float)Math.Sin (startAngleRadians);
+			var startPoint = new SKPoint (startx, starty);
+
+			var endx = xc + radius * (float)Math.Cos (endAngleRadians);
+			var endy = yc + radius * (float)Math.Sin (endAngleRadians);
+			var endPoint = new SKPoint (endx, endy);
+
+			// build the path
+			var points = new List<SKPoint> ();
+			//points.Add (new SKPoint (xc - radius, yc));
+			//points.Add (new SKPoint (xc + radius, yc));
+			//points.Add (new SKPoint (xc, yc - radius));
+			//points.Add (new SKPoint (xc, yc + radius));
+
+			while (x > y) 
+			{
+				x--;
+				y++;
+
+				cd2 -= x - y;
+				if (cd2 < 0)
+					cd2 += x++;
+
+				// 8 octants - listed clockwise
+
+				// right hemisphere, starting at the top
+				var p0 = new SKPoint (xc + y, yc - x);
+				var p1 = new SKPoint (xc + x, yc - y);
+				var p2 = new SKPoint (xc + x, yc + y);
+				var p3 = new SKPoint (xc + y, yc + x);
+
+				points.Add (p0);
+				points.Add (p1);
+				points.Add (p2);
+				points.Add (p3);
+
+				// left hemisphere, continuing around from the bottom
+				var p4 = new SKPoint (xc - y, yc + x);
+				var p5 = new SKPoint (xc - x, yc + y);
+				var p6 = new SKPoint (xc - x, yc - y);
+				var p7 = new SKPoint (xc - y, yc - x);
+
+				points.Add (p4);
+			}
+
+			canvas.DrawPoints (SKPointMode.Points, points.ToArray (), paint);
 		}
 	}
 }
