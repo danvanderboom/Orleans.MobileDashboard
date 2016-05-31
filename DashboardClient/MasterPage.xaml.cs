@@ -45,9 +45,10 @@ namespace DashboardClient
 			case "Cluster Map":
 				CurrentViewFrame.Content = clusterMapView ?? Container.Resolve<ClusterMapView> ();
 				break;
-			//case "History":
-			//	MainContentView.Content = historyView ?? Container.Resolve<HistoryView> ();
-			//	break;
+			case "History":
+				CurrentViewFrame.Content = new HealthIndicatorView ();// (Container, Events);
+				//MainContentView.Content = historyView ?? Container.Resolve<HistoryView> ();
+				break;
 			//case "Settings":
 			//	MainContentView.Content = settingsView ?? Container.Resolve<SettingsView> ();
 			//	break;
