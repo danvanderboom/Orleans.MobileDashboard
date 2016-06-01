@@ -129,7 +129,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DashboardClient\DashboardClient.csproj">
       <Project>{c31448fb-0658-4ca1-adc6-073501781bd0}</Project>
-      <Name>Orleans.MobileDashboard</Name>
+      <Name>DashboardClient</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
