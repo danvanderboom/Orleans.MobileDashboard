@@ -22,6 +22,8 @@ namespace DashboardClient.Views
 		public MenuBarView ()
 		{
 			InitializeComponent ();
+
+			UpdateOrientation ();
 		}
 
 		public MenuBarView (MenuBarViewModel viewModel, IUnityContainer container, IEventAggregator events)
@@ -33,8 +35,7 @@ namespace DashboardClient.Views
 
 			BindingContext = ViewModel = viewModel;
 
-			Events.GetEvent<OrientationEvent> ().Subscribe (
-				o => Orientation = (o == ViewOrientation.Portrait) ? StackOrientation.Horizontal : StackOrientation.Vertical);
+			Events.GetEvent<OrientationEvent> ().Subscribe (OnOrientationEventReceived);
 		}
 
 		public static readonly BindableProperty OrientationProperty = BindableProperty.Create (
@@ -56,35 +57,42 @@ namespace DashboardClient.Views
 			menubar.UpdateOrientation ();
 		}
 
+		void OnOrientationEventReceived (ViewOrientation orientation)
+		{
+			Orientation = (orientation == ViewOrientation.Portrait) ? StackOrientation.Horizontal : StackOrientation.Vertical;
+
+			UpdateOrientation ();
+		}
+
 		void UpdateOrientation ()
 		{
 			if (Orientation == StackOrientation.Vertical) 
 			{
-				DashboardButton.SetGridColumn (0, 4);
-				DashboardButton.SetGridRow (0, 1);
+				DashboardContent.SetGridColumn (0, 4);
+				DashboardContent.SetGridRow (0, 1);
 
-				ClusterMapButton.SetGridColumn (0, 4);
-				ClusterMapButton.SetGridRow (1, 1);
+				ClusterMapContent.SetGridColumn (0, 4);
+				ClusterMapContent.SetGridRow (1, 1);
 
-				HistoryButton.SetGridColumn (0, 4);
-				HistoryButton.SetGridRow (2, 1);
+				HistoryContent.SetGridColumn (0, 4);
+				HistoryContent.SetGridRow (2, 1);
 
-				SettingsButton.SetGridColumn (0, 4);
-				SettingsButton.SetGridRow (3, 1);
+				SettingsContent.SetGridColumn (0, 4);
+				SettingsContent.SetGridRow (3, 1);
 			} 
 			else 
 			{
-				DashboardButton.SetGridColumn (0, 1);
-				DashboardButton.SetGridRow (0, 4);
+				DashboardContent.SetGridColumn (0, 1);
+				DashboardContent.SetGridRow (0, 4);
 
-				ClusterMapButton.SetGridColumn (1, 1);
-				ClusterMapButton.SetGridRow (0, 4);
+				ClusterMapContent.SetGridColumn (1, 1);
+				ClusterMapContent.SetGridRow (0, 4);
 
-				HistoryButton.SetGridColumn (2, 1);
-				HistoryButton.SetGridRow (0, 4);
+				HistoryContent.SetGridColumn (2, 1);
+				HistoryContent.SetGridRow (0, 4);
 
-				SettingsButton.SetGridColumn (3, 1);
-				SettingsButton.SetGridRow (0, 4);
+				SettingsContent.SetGridColumn (3, 1);
+				SettingsContent.SetGridRow (0, 4);
 			}
 		}
 	}

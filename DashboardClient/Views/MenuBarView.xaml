@@ -2,7 +2,18 @@
 <ContentView 
 	xmlns="http://xamarin.com/schemas/2014/forms" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-	x:Class="DashboardClient.Views.MenuBarView">
+	x:Class="DashboardClient.Views.MenuBarView"
+	BackgroundColor="Black">
+
+	<ContentView.Resources>
+		<ResourceDictionary>
+			<Color x:Key="MenuButtonBackgroundColor">#7FFFFFFF</Color>
+			
+			<!--<Style x:Key="MenuButtonBackground" TargetType="ContentView">
+				<Setter Property="BackgroundColor" Value="#7FFFFFFF"/>
+			</Style>-->
+		</ResourceDictionary>
+	</ContentView.Resources>
 	
 	<ContentView.Content>
 		<Grid ColumnSpacing="0" RowSpacing="0">
@@ -19,10 +30,41 @@
 				<ColumnDefinition Width="*"/>
 			</Grid.ColumnDefinitions>
 
-			<Button x:Name="DashboardButton" Grid.Column="0" Grid.RowSpan="4" Text="Dashboard" TextColor="White" BackgroundColor="Navy" Command="{Binding NavigateDashboardCommand}"/>
-			<Button x:Name="ClusterMapButton" Grid.Column="1" Grid.RowSpan="4" Text="Map" TextColor="White" BackgroundColor="Navy" Command="{Binding NavigateClusterMapCommand}"/>
-			<Button x:Name="HistoryButton" Grid.Column="2" Grid.RowSpan="4" Text="History" TextColor="White" BackgroundColor="Navy" Command="{Binding NavigateHistoryCommand}"/>
-			<Button x:Name="SettingsButton" Grid.Column="3" Grid.RowSpan="4" Text="Settings" TextColor="White" BackgroundColor="Navy" Command="{Binding NavigateSettings}"/>
+			<ContentView x:Name="DashboardContent" Grid.Column="0" Grid.RowSpan="4" Padding="3">
+				<Grid>
+					<ContentView BackgroundColor="{StaticResource MenuButtonBackgroundColor}">
+						<Button x:Name="DashboardButton" Command="{Binding NavigateDashboardCommand}"/>
+					</ContentView>
+					<Label Text="Dashboard" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+				</Grid>
+			</ContentView>
+
+			<ContentView x:Name="ClusterMapContent" Grid.Column="1" Grid.RowSpan="4" Padding="3">
+				<Grid>
+					<ContentView BackgroundColor="{StaticResource MenuButtonBackgroundColor}">
+						<Button x:Name="ClusterMapButton" Command="{Binding NavigateClusterMapCommand}"/>
+					</ContentView>
+					<Label Text="Map" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+				</Grid>
+			</ContentView>
+
+			<ContentView x:Name="HistoryContent" Grid.Column="2" Grid.RowSpan="4" Padding="3">
+				<Grid>
+					<ContentView BackgroundColor="{StaticResource MenuButtonBackgroundColor}">
+						<Button x:Name="HistoryButton" Command="{Binding NavigateHistoryCommand}"/>
+					</ContentView>
+					<Label Text="History" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+				</Grid>
+			</ContentView>
+
+			<ContentView x:Name="SettingsContent" Grid.Column="3" Grid.RowSpan="4" Padding="3">
+				<Grid>
+					<ContentView BackgroundColor="{StaticResource MenuButtonBackgroundColor}">
+						<Button x:Name="SettingsButton" Command="{Binding NavigateSettings}"/>
+					</ContentView>
+					<Label Text="Settings" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+				</Grid>
+			</ContentView>
 		</Grid>
 	</ContentView.Content>
 </ContentView>

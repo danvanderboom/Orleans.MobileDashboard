@@ -20,7 +20,7 @@
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="80"/>
+				<ColumnDefinition Width="90"/>
 			</Grid.ColumnDefinitions>
 
 			<ContentView x:Name="CurrentViewFrame" Grid.Row="0" Grid.ColumnSpan="2"/>

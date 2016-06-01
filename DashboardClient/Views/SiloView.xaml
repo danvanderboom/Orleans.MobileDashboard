@@ -39,7 +39,7 @@
 			</ContentView>
 
 			<ContentView x:Name="VersionContent" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5">
-				<Label Text="Version"/>
+				<Label Text="1.2.3"/>
 			</ContentView>
 			
 			<ContentView x:Name="CPUContent" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="5" Padding="8">
