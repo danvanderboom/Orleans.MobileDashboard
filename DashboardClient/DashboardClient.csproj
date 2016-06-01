@@ -79,6 +79,9 @@
     <Compile Include="Interfaces\ISkiaViewController.cs" />
     <Compile Include="ViewModels\SiloViewModel.cs" />
     <Compile Include="ViewModels\Enums.cs" />
+    <Compile Include="Views\ColorPalette.xaml.cs">
+      <DependentUpon>ColorPalette.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ModernHttpClient">
@@ -168,6 +171,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\HealthIndicatorView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ColorPalette.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

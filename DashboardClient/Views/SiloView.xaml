@@ -25,13 +25,15 @@
 				<ColumnDefinition Width="*"/>
 				<ColumnDefinition Width="*"/>
 				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
 			</Grid.ColumnDefinitions>
 			<Grid.RowDefinitions>
+				<RowDefinition Height="25"/>
 				<RowDefinition Height="40"/>
-				<RowDefinition Height="40"/>
 				<RowDefinition Height="*"/>
 				<RowDefinition Height="*"/>
 				<RowDefinition Height="*"/>
+				<RowDefinition Height="25"/>
 			</Grid.RowDefinitions>
 
 			<ContentView x:Name="SiloContent" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" BackgroundColor="Gray">
@@ -52,6 +54,10 @@
 			
 			<ContentView x:Name="GrainContent" Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="5" Padding="8">
 				<local:HealthIndicatorView/>
+			</ContentView>
+
+			<ContentView x:Name="ActivationsContent" Grid.Row="5" Grid.Column="5" Grid.ColumnSpan="5" Padding="8">
+				<Label Text="12,345" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
 			</ContentView>
 		</Grid>
 	</ContentView.Content>

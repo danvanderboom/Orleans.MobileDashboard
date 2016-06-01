@@ -3,7 +3,8 @@
 	xmlns="http://xamarin.com/schemas/2014/forms" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 	xmlns:local="clr-namespace:DashboardClient.Views;assembly=DashboardClient"
-	x:Class="DashboardClient.Views.ClusterView">
+	x:Class="DashboardClient.Views.ClusterView"
+	BackgroundColor="#444444">
 
 	<!--xmlns:dark="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Dark"-->
 	
@@ -11,7 +12,7 @@
 <!--    	<ResourceDictionary MergedWith="dark:DarkThemeResources">-->
     	<ResourceDictionary>
 			<Style TargetType="Label">
-				<Setter Property="TextColor" Value="Black"/>
+				<Setter Property="TextColor" Value="White"/>
 				<Setter Property="HorizontalTextAlignment" Value="Center"/>
 			</Style>
 		</ResourceDictionary>

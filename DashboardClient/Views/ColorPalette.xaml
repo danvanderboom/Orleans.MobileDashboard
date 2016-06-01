@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="DashboardClient.ColorPalette"
+	BackgroundColor="Black">
+
+	<ContentView.Resources>
+		<ResourceDictionary>
+			<Color x:Key="AppBackground">#000000</Color>
+			<Color x:Key="MenuButtonBackground">#7F7F7F</Color>
+			<Color x:Key="MenuButtonTextColor">#FFFFFF</Color>
+			<Color x:Key="ErrorColor">#E00000</Color>
+			<Color x:Key="WarningColor">#F09000</Color>
+			<Color x:Key="MenuBackground">#000000</Color>
+
+			<Style TargetType="Label">
+				<Setter Property="TextColor" Value="White"/>
+				<Setter Property="VerticalTextAlignment" Value="Center"/>
+				<Setter Property="HorizontalTextAlignment" Value="Center"/>
+			</Style>
+		</ResourceDictionary>
+	</ContentView.Resources>
+	
+	<ContentView.Content>
+		<Grid RowSpacing="8" ColumnSpacing="8">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+			
+			<ContentView Grid.Row="0" Grid.Column="0" BackgroundColor="White" Padding="2">
+				<ContentView BackgroundColor="{StaticResource AppBackground}" Padding="2">
+					<Label Text="AppBackground"/>
+				</ContentView>
+			</ContentView>
+
+			<ContentView Grid.Row="1" Grid.Column="0" BackgroundColor="White" Padding="2">
+				<ContentView BackgroundColor="{StaticResource WarningColor}" Padding="2">
+					<Label Text="WarningColor" TextColor="Black"/>
+				</ContentView>
+			</ContentView>
+
+			<ContentView Grid.Row="2" Grid.Column="0" BackgroundColor="White" Padding="2">
+				<ContentView BackgroundColor="{StaticResource ErrorColor}" Padding="2">
+					<Label Text="ErrorColor"/>
+				</ContentView>
+			</ContentView>
+
+
+			<ContentView Grid.Row="0" Grid.Column="1" BackgroundColor="White" Padding="2">
+				<ContentView BackgroundColor="{StaticResource MenuBackground}" Padding="2">
+					<Label Text="MenuBackground"/>
+				</ContentView>
+			</ContentView>
+			
+			<ContentView Grid.Row="1" Grid.Column="1" BackgroundColor="White" Padding="2">
+				<ContentView BackgroundColor="{StaticResource MenuButtonBackground}" Padding="2">
+					<Label Text="MenuButtonBackground"/>
+				</ContentView>
+			</ContentView>
+
+			<ContentView Grid.Row="2" Grid.Column="1" BackgroundColor="White" Padding="2">
+				<ContentView BackgroundColor="{StaticResource MenuButtonTextColor}" Padding="2">
+					<Label Text="MenuButtonTextColor" TextColor="Black"/>
+				</ContentView>
+			</ContentView>
+			
+
+
+
+
+			
+
+
+
+
+
+		</Grid>
+	</ContentView.Content>
+</ContentView>
