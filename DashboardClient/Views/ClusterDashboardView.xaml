@@ -24,12 +24,36 @@
 			</Grid.ColumnDefinitions>
 			<Grid.RowDefinitions>
 				<RowDefinition Height="100"/>
+				<RowDefinition Height="Auto"/>
 				<RowDefinition Height="*"/>
 			</Grid.RowDefinitions>
 
 			<local:ClusterView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
 
-			<Grid x:Name="ResourceSidebar" Grid.Row="1" Grid.Column="0" BackgroundColor="Blue" RowSpacing="0">
+			<ContentView x:Name="ColumnHeaderView" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+					HeightRequest="50" BackgroundColor="Fuchsia">
+
+				<Grid RowSpacing="0" ColumnSpacing="0">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*"/>
+					</Grid.RowDefinitions>
+
+					<Label Grid.Column="0" Text="Silo" TextColor="White" VerticalTextAlignment="Center"/>
+					<Label Grid.Column="1" Text="Version" TextColor="White" VerticalTextAlignment="Center"/>
+					<Label Grid.Column="2" Text="CPU" TextColor="White" VerticalTextAlignment="Center"/>
+					<Label Grid.Column="3" Text="Memory" TextColor="White" VerticalTextAlignment="Center"/>
+					<Label Grid.Column="4" Text="Grains" TextColor="White" VerticalTextAlignment="Center"/>
+				</Grid>
+			</ContentView>
+
+			<Grid x:Name="ResourceSidebar" Grid.Row="2" Grid.Column="0" BackgroundColor="Blue" RowSpacing="0">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="*"/>
 				</Grid.ColumnDefinitions>
@@ -48,7 +72,7 @@
 				<Label Grid.Row="4" Text="Grains" TextColor="White" VerticalTextAlignment="Center"/>
 			</Grid>
 
-			<ScrollView x:Name="SiloScrollView" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+			<ScrollView x:Name="SiloScrollView" Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
 				<StackLayout x:Name="SiloStack" Orientation="Horizontal" Spacing="2" HorizontalOptions="FillAndExpand">
 					<!-- local:SiloView controls added here in code -->
 				</StackLayout>

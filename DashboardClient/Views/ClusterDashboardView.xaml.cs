@@ -37,6 +37,8 @@ namespace DashboardClient.Views
 
 		void OnOrientationUpdated (ViewOrientation o)
 		{
+			ColumnHeaderView.IsVisible = (o == ViewOrientation.Portrait);
+
 			SiloScrollView.Orientation = (o == ViewOrientation.Portrait) ? ScrollOrientation.Vertical : ScrollOrientation.Horizontal;
 			SiloStack.Orientation = (o == ViewOrientation.Portrait) ? StackOrientation.Vertical : StackOrientation.Horizontal;
 
@@ -46,6 +48,7 @@ namespace DashboardClient.Views
 				SiloScrollView.SetGridColumn (0, 2);
 			else
 				SiloScrollView.SetGridColumn (1, 1);
+
 		}
 	}
 }
