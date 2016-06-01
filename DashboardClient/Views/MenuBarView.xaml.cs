@@ -34,7 +34,7 @@ namespace DashboardClient.Views
 			BindingContext = ViewModel = viewModel;
 
 			Events.GetEvent<OrientationEvent> ().Subscribe (
-				o => Orientation = (o == "Portrait") ? StackOrientation.Horizontal : StackOrientation.Vertical);
+				o => Orientation = (o == ViewOrientation.Portrait) ? StackOrientation.Horizontal : StackOrientation.Vertical);
 		}
 
 		public static readonly BindableProperty OrientationProperty = BindableProperty.Create (

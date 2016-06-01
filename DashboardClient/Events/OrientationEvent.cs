@@ -3,7 +3,7 @@ using Prism.Events;
 
 namespace DashboardClient
 {
-	public class OrientationEvent : PubSubEvent<string>
+	public class OrientationEvent : PubSubEvent<ViewOrientation>
 	{
 	}
 }

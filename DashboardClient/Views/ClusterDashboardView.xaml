@@ -29,7 +29,7 @@
 
 			<local:ClusterView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
 
-			<Grid Grid.Row="1" Grid.Column="0" BackgroundColor="Blue" RowSpacing="0">
+			<Grid x:Name="ResourceSidebar" Grid.Row="1" Grid.Column="0" BackgroundColor="Blue" RowSpacing="0">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="*"/>
 				</Grid.ColumnDefinitions>
@@ -48,14 +48,9 @@
 				<Label Grid.Row="4" Text="Grains" TextColor="White" VerticalTextAlignment="Center"/>
 			</Grid>
 
-			<ScrollView Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
-				<StackLayout Orientation="Horizontal" Spacing="2" HorizontalOptions="FillAndExpand">
-					<local:SiloView Orientation="Vertical" HeightRequest="100" WidthRequest="100"/>
-					<local:SiloView Orientation="Vertical" HeightRequest="100" WidthRequest="100"/>
-					<local:SiloView Orientation="Vertical" HeightRequest="100" WidthRequest="100"/>
-					<local:SiloView Orientation="Vertical" HeightRequest="100" WidthRequest="100"/>
-					<local:SiloView Orientation="Vertical" HeightRequest="100" WidthRequest="100"/>
-					<local:SiloView Orientation="Vertical" HeightRequest="100" WidthRequest="100"/>
+			<ScrollView x:Name="SiloScrollView" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+				<StackLayout x:Name="SiloStack" Orientation="Horizontal" Spacing="2" HorizontalOptions="FillAndExpand">
+					<!-- local:SiloView controls added here in code -->
 				</StackLayout>
 			</ScrollView>
 		</Grid>

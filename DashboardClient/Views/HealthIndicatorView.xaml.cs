@@ -24,6 +24,9 @@ namespace DashboardClient.Views
 
 		void OnSizeChanged (object sender, EventArgs e)
 		{
+			if (Bounds.Width < 1 || Bounds.Height < 1)
+				return;
+
 			var image = CreateBackgroundImage ();
 
 			var stream = image.Encode ().AsStream ();
@@ -207,8 +210,6 @@ namespace DashboardClient.Views
 			int y = 0;
 			int cd2 = 0;
 
-
-
 			// convert degrees to radians
 			var startAngleRadians = startAngleInDegrees * Math.PI / 180;
 			var endAngleRadians = endAngleInDegrees * Math.PI / 180;
@@ -224,11 +225,29 @@ namespace DashboardClient.Views
 
 			// build the path
 			var points = new List<SKPoint> ();
-			//points.Add (new SKPoint (xc - radius, yc));
-			//points.Add (new SKPoint (xc + radius, yc));
-			//points.Add (new SKPoint (xc, yc - radius));
-			//points.Add (new SKPoint (xc, yc + radius));
 
+			// 4 cardinal points
+
+			var p00 = new SKPoint (xc - radius, yc);
+			var ap00 = Math.Atan2 (p00.Y - yc, p00.X - xc) * 180 / Math.PI;
+			if (IsAngleBetween ((int)ap00, (int)startAngleInDegrees, (int)endAngleInDegrees))
+				points.Add (p00);
+			
+			var p01 = new SKPoint (xc + radius, yc);
+			var ap01 = Math.Atan2 (p01.Y - yc, p01.X - xc) * 180 / Math.PI;
+			if (IsAngleBetween ((int)ap01, (int)startAngleInDegrees, (int)endAngleInDegrees))
+				points.Add (p01);
+			
+			var p02 = new SKPoint (xc, yc - radius);
+			var ap02 = Math.Atan2 (p02.Y - yc, p02.X - xc) * 180 / Math.PI;
+			if (IsAngleBetween ((int)ap02, (int)startAngleInDegrees, (int)endAngleInDegrees))
+				points.Add (p02);
+			
+			var p03 = new SKPoint (xc, yc + radius);
+			var ap03 = Math.Atan2 (p03.Y - yc, p03.X - xc) * 180 / Math.PI;
+			if (IsAngleBetween ((int)ap03, (int)startAngleInDegrees, (int)endAngleInDegrees))
+				points.Add (p03);
+			
 			while (x > y) 
 			{
 				x--;
@@ -241,65 +260,47 @@ namespace DashboardClient.Views
 				// 8 octants - listed clockwise
 
 				// right hemisphere, starting at the top
+
 				var p0 = new SKPoint (xc + y, yc - x);
-				var arp0 = Math.Atan2 (p0.Y - yc, p0.X - xc);
-
-				var p1 = new SKPoint (xc + x, yc - y);
-				var arp1 = Math.Atan2 (p1.Y - yc, p1.X - xc);
-
-				var p2 = new SKPoint (xc + x, yc + y);
-				var arp2 = Math.Atan2 (p2.Y - yc, p2.X - xc);
-
-				var p3 = new SKPoint (xc + y, yc + x);
-				var arp3 = Math.Atan2 (p3.Y - yc, p3.X - xc);
-
-				// convert radians to degrees
-				var ap0 = arp0 * 180 / Math.PI;
-				var ap1 = arp1 * 180 / Math.PI;
-				var ap2 = arp2 * 180 / Math.PI;
-				var ap3 = arp3 * 180 / Math.PI;
-
-				if (IsAngleBetween((int)ap0, (int)startAngleInDegrees, (int)endAngleInDegrees))
+				var arp0 = Math.Atan2 (p0.Y - yc, p0.X - xc) * 180 / Math.PI;
+				if (IsAngleBetween ((int)arp0, (int)startAngleInDegrees, (int)endAngleInDegrees))
 					points.Add (p0);
-
-				if (IsAngleBetween ((int)ap1, (int)startAngleInDegrees, (int)endAngleInDegrees))
+				
+				var p1 = new SKPoint (xc + x, yc - y);
+				var arp1 = Math.Atan2 (p1.Y - yc, p1.X - xc) * 180 / Math.PI;
+				if (IsAngleBetween ((int)arp1, (int)startAngleInDegrees, (int)endAngleInDegrees))
 					points.Add (p1);
-
-				if (IsAngleBetween ((int)ap2, (int)startAngleInDegrees, (int)endAngleInDegrees))
+				
+				var p2 = new SKPoint (xc + x, yc + y);
+				var arp2 = Math.Atan2 (p2.Y - yc, p2.X - xc) * 180 / Math.PI;
+				if (IsAngleBetween ((int)arp2, (int)startAngleInDegrees, (int)endAngleInDegrees))
 					points.Add (p2);
-
-				if (IsAngleBetween ((int)ap3, (int)startAngleInDegrees, (int)endAngleInDegrees))
+				
+				var p3 = new SKPoint (xc + y, yc + x);
+				var arp3 = Math.Atan2 (p3.Y - yc, p3.X - xc) * 180 / Math.PI;
+				if (IsAngleBetween ((int)arp3, (int)startAngleInDegrees, (int)endAngleInDegrees))
 					points.Add (p3);
 
 				// left hemisphere, continuing around from the bottom
+
 				var p4 = new SKPoint (xc - y, yc + x);
-				var arp4 = Math.Atan2 (p4.Y - yc, p4.X - xc);
-
-				var p5 = new SKPoint (xc - x, yc + y);
-				var arp5 = Math.Atan2 (p5.Y - yc, p5.X - xc);
-
-				var p6 = new SKPoint (xc - x, yc - y);
-				var arp6 = Math.Atan2 (p6.Y - yc, p6.X - xc);
-
-				var p7 = new SKPoint (xc - y, yc - x);
-				var arp7 = Math.Atan2 (p7.Y - yc, p7.X - xc);
-
-				// convert radians to degrees
-				var ap4 = arp4 * 180 / Math.PI;
-				var ap5 = arp5 * 180 / Math.PI;
-				var ap6 = arp6 * 180 / Math.PI;
-				var ap7 = arp7 * 180 / Math.PI;
-
-				if (IsAngleBetween ((int)ap4, (int)startAngleInDegrees, (int)endAngleInDegrees))
+				var arp4 = Math.Atan2 (p4.Y - yc, p4.X - xc) * 180 / Math.PI;
+				if (IsAngleBetween ((int)arp4, (int)startAngleInDegrees, (int)endAngleInDegrees))
 					points.Add (p4);
-
-				if (IsAngleBetween ((int)ap5, (int)startAngleInDegrees, (int)endAngleInDegrees))
+				
+				var p5 = new SKPoint (xc - x, yc + y);
+				var arp5 = Math.Atan2 (p5.Y - yc, p5.X - xc) * 180 / Math.PI;
+				if (IsAngleBetween ((int)arp5, (int)startAngleInDegrees, (int)endAngleInDegrees))
 					points.Add (p5);
-
-				if (IsAngleBetween ((int)ap6, (int)startAngleInDegrees, (int)endAngleInDegrees))
+				
+				var p6 = new SKPoint (xc - x, yc - y);
+				var arp6 = Math.Atan2 (p6.Y - yc, p6.X - xc) * 180 / Math.PI;
+				if (IsAngleBetween ((int)arp6, (int)startAngleInDegrees, (int)endAngleInDegrees))
 					points.Add (p6);
-
-				if (IsAngleBetween ((int)ap7, (int)startAngleInDegrees, (int)endAngleInDegrees))
+				
+				var p7 = new SKPoint (xc - y, yc - x);
+				var arp7 = Math.Atan2 (p7.Y - yc, p7.X - xc) * 180 / Math.PI;
+				if (IsAngleBetween ((int)arp7, (int)startAngleInDegrees, (int)endAngleInDegrees))
 					points.Add (p7);
 			}
 

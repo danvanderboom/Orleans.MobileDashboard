@@ -19,10 +19,10 @@
 				<ColumnDefinition Width="*"/>
 			</Grid.ColumnDefinitions>
 
-			<Button x:Name="DashboardButton" Grid.Column="0" Grid.RowSpan="4" Text="Dashboard" BackgroundColor="Aqua" Command="{Binding NavigateDashboardCommand}"/>
-			<Button x:Name="ClusterMapButton" Grid.Column="1" Grid.RowSpan="4" Text="Map" BackgroundColor="Fuchsia" Command="{Binding NavigateClusterMapCommand}"/>
-			<Button x:Name="HistoryButton" Grid.Column="2" Grid.RowSpan="4" Text="History" BackgroundColor="Blue" Command="{Binding NavigateHistoryCommand}"/>
-			<Button x:Name="SettingsButton" Grid.Column="3" Grid.RowSpan="4" Text="Settings" BackgroundColor="Maroon" Command="{Binding NavigateSettings}"/>
+			<Button x:Name="DashboardButton" Grid.Column="0" Grid.RowSpan="4" Text="Dashboard" TextColor="White" BackgroundColor="Navy" Command="{Binding NavigateDashboardCommand}"/>
+			<Button x:Name="ClusterMapButton" Grid.Column="1" Grid.RowSpan="4" Text="Map" TextColor="White" BackgroundColor="Navy" Command="{Binding NavigateClusterMapCommand}"/>
+			<Button x:Name="HistoryButton" Grid.Column="2" Grid.RowSpan="4" Text="History" TextColor="White" BackgroundColor="Navy" Command="{Binding NavigateHistoryCommand}"/>
+			<Button x:Name="SettingsButton" Grid.Column="3" Grid.RowSpan="4" Text="Settings" TextColor="White" BackgroundColor="Navy" Command="{Binding NavigateSettings}"/>
 		</Grid>
 	</ContentView.Content>
 </ContentView>

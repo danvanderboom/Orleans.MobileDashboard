@@ -79,7 +79,7 @@ namespace DashboardClient
 			CurrentViewFrame.PlaceInGrid (0, 0, 1, 2);
 			MenuBarFrame.PlaceInGrid (1, 0, 1, 2);
 
-			Events.GetEvent<OrientationEvent> ().Publish ("Portrait");
+			Events.GetEvent<OrientationEvent> ().Publish (ViewOrientation.Portrait);
 		}
 
 		void SetLandscapeLayout ()
@@ -87,7 +87,7 @@ namespace DashboardClient
 			CurrentViewFrame.PlaceInGrid (0, 0, 2, 1);
 			MenuBarFrame.PlaceInGrid (0, 1, 2, 1);
 
-			Events.GetEvent<OrientationEvent> ().Publish ("Landscape");
+			Events.GetEvent<OrientationEvent> ().Publish (ViewOrientation.Landscape);
 		}
 	}
 }

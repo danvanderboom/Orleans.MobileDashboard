@@ -1,20 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Practices.Unity;
+using Prism.Events;
 using Xamarin.Forms;
 
 namespace DashboardClient.Views
 {
 	public partial class SiloView : ContentView
 	{
+		IUnityContainer Container;
+		IEventAggregator Events;
+
 		public StackOrientation Orientation 
 		{
 			get { return (StackOrientation)GetValue (OrientationProperty); }
 			set { SetValue (OrientationProperty, value); }
 		}
 
-		public SiloView ()
+		public SiloView (IUnityContainer container, IEventAggregator events)
 		{
+			Container = container;
+			Events = events;
+
 			InitializeComponent ();
+
+			Events.GetEvent<OrientationEvent> ().Subscribe (
+				o => Orientation = (o == ViewOrientation.Portrait) ? StackOrientation.Horizontal : StackOrientation.Vertical);
 
 			UpdateOrientation ();
 		}

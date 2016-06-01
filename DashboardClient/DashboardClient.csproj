@@ -77,6 +77,8 @@
     </Compile>
     <Compile Include="Controls\SkiaView.cs" />
     <Compile Include="Interfaces\ISkiaViewController.cs" />
+    <Compile Include="ViewModels\SiloViewModel.cs" />
+    <Compile Include="ViewModels\Enums.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ModernHttpClient">
