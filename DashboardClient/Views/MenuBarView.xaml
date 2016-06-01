@@ -9,9 +9,13 @@
 		<ResourceDictionary>
 			<Color x:Key="MenuButtonBackgroundColor">#7FFFFFFF</Color>
 			
-			<!--<Style x:Key="MenuButtonBackground" TargetType="ContentView">
-				<Setter Property="BackgroundColor" Value="#7FFFFFFF"/>
-			</Style>-->
+			<Style x:Key="MenuButtonLabel" TargetType="Label">
+				<Setter Property="TextColor" Value="White"/>
+				<Setter Property="FontSize" Value="12"/>
+				<Setter Property="HorizontalTextAlignment" Value="Center"/>
+				<Setter Property="VerticalTextAlignment" Value="Center"/>
+				<Setter Property="InputTransparent" Value="true"/>
+			</Style>
 		</ResourceDictionary>
 	</ContentView.Resources>
 	
@@ -35,7 +39,7 @@
 					<ContentView BackgroundColor="{StaticResource MenuButtonBackgroundColor}">
 						<Button x:Name="DashboardButton" Command="{Binding NavigateDashboardCommand}"/>
 					</ContentView>
-					<Label Text="Dashboard" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+					<Label Text="Dashboard" Style="{StaticResource MenuButtonLabel}"/>
 				</Grid>
 			</ContentView>
 
@@ -44,7 +48,7 @@
 					<ContentView BackgroundColor="{StaticResource MenuButtonBackgroundColor}">
 						<Button x:Name="ClusterMapButton" Command="{Binding NavigateClusterMapCommand}"/>
 					</ContentView>
-					<Label Text="Map" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+					<Label Text="Map" Style="{StaticResource MenuButtonLabel}"/>
 				</Grid>
 			</ContentView>
 
@@ -53,7 +57,7 @@
 					<ContentView BackgroundColor="{StaticResource MenuButtonBackgroundColor}">
 						<Button x:Name="HistoryButton" Command="{Binding NavigateHistoryCommand}"/>
 					</ContentView>
-					<Label Text="History" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+					<Label Text="History" Style="{StaticResource MenuButtonLabel}"/>
 				</Grid>
 			</ContentView>
 
@@ -62,7 +66,7 @@
 					<ContentView BackgroundColor="{StaticResource MenuButtonBackgroundColor}">
 						<Button x:Name="SettingsButton" Command="{Binding NavigateSettings}"/>
 					</ContentView>
-					<Label Text="Settings" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+					<Label Text="Settings" Style="{StaticResource MenuButtonLabel}"/>
 				</Grid>
 			</ContentView>
 		</Grid>
