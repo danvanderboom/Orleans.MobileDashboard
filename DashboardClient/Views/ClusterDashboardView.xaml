@@ -56,7 +56,7 @@
 				</Grid>
 			</ContentView>
 
-			<Grid x:Name="ResourceSidebar" Grid.Row="2" Grid.Column="0" BackgroundColor="Blue" RowSpacing="0">
+			<Grid x:Name="ResourceSidebar" Grid.Row="2" Grid.Column="0" BackgroundColor="#7F7F7F" RowSpacing="0" Margin="0,2,0,0">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="*"/>
 				</Grid.ColumnDefinitions>
@@ -74,6 +74,7 @@
 				<Label Grid.Row="2" Text="CPU" TextColor="White" VerticalTextAlignment="Center"/>
 				<Label Grid.Row="3" Text="Memory" TextColor="White" VerticalTextAlignment="Center"/>
 				<Label Grid.Row="4" Text="Grains" TextColor="White" VerticalTextAlignment="Center"/>
+				<Label Grid.Row="5" Text="Activ." TextColor="White" VerticalTextAlignment="Center"/>
 			</Grid>
 
 			<ScrollView x:Name="SiloScrollView" Grid.Row="2" Grid.Column="1" Margin="0,2,0,0" Orientation="Horizontal" BackgroundColor="Black">
