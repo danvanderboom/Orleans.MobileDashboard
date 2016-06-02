@@ -6,16 +6,11 @@ namespace DashboardClient
 {
 	public class Bootstrapper : UnityBootstrapper
 	{
-        protected override void OnInitialized()
-        {
-        }
+		protected override void OnInitialized()
+		{
+		}
 
-        protected override void InitializeMainPage()
-        {
-            base.InitializeMainPage();
-        }
-
-        protected override Xamarin.Forms.Page CreateMainPage ()
+		protected override Xamarin.Forms.Page CreateMainPage ()
 		{
 			//return (Page)Container.Resolve<MasterPage> ();
 			return new MasterPage (Container);

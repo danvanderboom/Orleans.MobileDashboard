@@ -1,12 +1,12 @@
-﻿using Prism.Unity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using Prism.Unity;
 
 namespace DashboardClient
 {
-	public partial class App : Prism.Unity.PrismApplication
-    {
+	public partial class App : PrismApplication
+	{
 		public App ()
 		{
             //var bs = new Bootstrapper();
@@ -21,9 +21,11 @@ namespace DashboardClient
         {
             InitializeComponent();
 
-            //NavigationService.Navigate("MainPage");
-            NavigationService.NavigateAsync<MasterPage>();
-        }
+			//NavigationService.Navigate("MainPage");
+			//NavigationService.NavigateAsync<MasterPage>();
+
+			MainPage = new MasterPage(Container);
+		}
 
         protected override void RegisterTypes()
         {
