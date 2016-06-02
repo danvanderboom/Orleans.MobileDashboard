@@ -5,6 +5,7 @@
     "Prism.Core": "6.1.0",
     "Prism.Forms": "6.1.0-pre5",
     "Prism.Unity.Forms": "6.2.0-pre5",
+    "Prism.Windows": "6.0.2-pre1",
     "Unity": "4.0.1",
     "Xamarin.Forms": "2.3.0.38-pre2",
     "Xamarin.Forms.Theme.Base": "1.0.0.43-pre1",

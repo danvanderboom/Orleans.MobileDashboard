@@ -26,7 +26,8 @@ namespace DashboardClient.Windows
         {
             this.InitializeComponent();
 
-            LoadApplication(new DashboardClient.App());
+            var app = new DashboardClient.App();
+            LoadApplication(app);
         }
     }
 }
