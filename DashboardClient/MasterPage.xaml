@@ -5,12 +5,12 @@
 	xmlns:local="clr-namespace:DashboardClient.Views;assembly=DashboardClient"
 	x:Class="DashboardClient.MasterPage">
 
-  	<ContentPage.Padding>
-    	<OnPlatform x:TypeArguments="Thickness"
-	        iOS="0, 20, 0, 0"
-	        Android="0, 0, 0, 0"
-	        WinPhone="0, 0, 0, 0" />
-  	</ContentPage.Padding>
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+	      iOS="0, 20, 0, 0"
+	      Android="0, 0, 0, 0"
+	      WinPhone="0, 0, 0, 0" />
+  </ContentPage.Padding>
 	
 	<ContentPage.Content>
 		<Grid x:Name="RootLayout" RowSpacing="0" ColumnSpacing="0">

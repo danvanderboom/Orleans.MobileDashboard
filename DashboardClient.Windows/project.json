@@ -6,11 +6,9 @@
     "Prism.Forms": "6.1.0-pre5",
     "Prism.Unity.Forms": "6.2.0-pre5",
     "Prism.Windows": "6.0.2-pre1",
+    "SkiaSharp": "1.49.3-beta",
     "Unity": "4.0.1",
-    "Xamarin.Forms": "2.3.0.38-pre2",
-    "Xamarin.Forms.Theme.Base": "1.0.0.43-pre1",
-    "Xamarin.Forms.Theme.Dark": "1.0.0.43-pre1",
-    "Xamarin.Forms.Theme.Light": "1.0.0.43-pre1"
+    "Xamarin.Forms": "2.2.0.45"
   },
   "frameworks": {
     "uap10.0": {}
