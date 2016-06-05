@@ -86,8 +86,6 @@
 						<RowDefinition Height="*"/>
 					</Grid.RowDefinitions>
 
-
-
 					<!-- upgrade domain labels -->
 
 					<ContentView Grid.Row="2" Grid.Column="0">
