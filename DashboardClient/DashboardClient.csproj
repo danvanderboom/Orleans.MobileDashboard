@@ -37,7 +37,7 @@
       <DependentUpon>MasterPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ClusterView.xaml.cs">
-      <DependentUpon>ClusterView.xaml</DependentUpon>
+      <DependentUpon>ClusterHeaderView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
@@ -143,7 +143,7 @@
     <EmbeddedResource Include="MasterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ClusterView.xaml">
+    <EmbeddedResource Include="Views\ClusterHeaderView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginView.xaml">

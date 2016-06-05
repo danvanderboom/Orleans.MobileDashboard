@@ -3,8 +3,8 @@
 	xmlns="http://xamarin.com/schemas/2014/forms" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 	xmlns:local="clr-namespace:DashboardClient.Views;assembly=DashboardClient"
-	x:Class="DashboardClient.Views.ClusterView"
-	BackgroundColor="#444444">
+	x:Class="DashboardClient.Views.ClusterHeaderView"
+	BackgroundColor="{StaticResource AppBackgroundColor}">
 
 	<ContentView.Resources>
 <!--    	<ResourceDictionary MergedWith="dark:DarkThemeResources">-->
@@ -34,7 +34,7 @@
 				</StackLayout>
 			</ContentView>
 
-			<ContentView Grid.Column="2" Padding="20,0,20,0" BackgroundColor="Green">
+			<ContentView Grid.Column="2" Padding="20,0,20,0" BackgroundColor="{StaticResource HealthyGreen}">
 				<StackLayout VerticalOptions="Center">
 					<Label Text="Health" StyleClass="Header"/>
 					<Label Text="Indicator" StyleClass="Header"/>

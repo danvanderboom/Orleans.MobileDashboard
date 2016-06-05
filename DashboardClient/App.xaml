@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <prism:PrismApplication
-  xmlns="http://xamarin.com/schemas/2014/forms" 
-  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-  xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
-  x:Class="DashboardClient.App">
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
+	x:Class="DashboardClient.App">
+
+	<prism:PrismApplication.Resources>
+		<ResourceDictionary>
+			<Color x:Key="AppBackgroundColor">#191919</Color>
+			<Color x:Key="PanelBackgroundColor">#323232</Color>
+			<Color x:Key="ButtonBackgroundColor">#4B4B4B</Color>
+
+			<Color x:Key="HealthyGreen">#2C9D43</Color>
+			<Color x:Key="WarningOrange">#C73908</Color>
+			<Color x:Key="ProblemRed">#FF0000</Color>
+			
+			<Color x:Key="HighlightYellow">#B9C40A</Color>
+			
+		</ResourceDictionary>
+	</prism:PrismApplication.Resources>
 
 </prism:PrismApplication>

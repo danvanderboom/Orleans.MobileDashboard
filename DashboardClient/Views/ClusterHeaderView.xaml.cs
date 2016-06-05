@@ -4,9 +4,9 @@ using Xamarin.Forms;
 
 namespace DashboardClient.Views
 {
-	public partial class ClusterView : ContentView
+	public partial class ClusterHeaderView : ContentView
 	{
-		public ClusterView ()
+		public ClusterHeaderView ()
 		{
 			InitializeComponent ();
 		}

@@ -58,8 +58,11 @@ namespace DashboardClient.Views
 				SiloContent.SetGridColumn (0, columns);
 				SiloContent.SetGridRow (0, 1);
 
-				VersionContent.SetGridColumn (0, columns);
-				VersionContent.SetGridRow (1, 1);
+				//VersionContent.SetGridColumn (0, columns);
+				//VersionContent.SetGridRow (1, 1);
+
+				ActivationsContent.SetGridColumn (0, columns);
+				ActivationsContent.SetGridRow (1, 1);
 
 				CPUContent.SetGridColumn (0, columns);
 				CPUContent.SetGridRow (2, 1);
@@ -69,17 +72,17 @@ namespace DashboardClient.Views
 
 				GrainContent.SetGridColumn (0, columns);
 				GrainContent.SetGridRow (4, 1);
-
-				ActivationsContent.SetGridColumn (0, columns);
-				ActivationsContent.SetGridRow (5, 1);
 			} 
 			else 
 			{
 				SiloContent.SetGridColumn (0, 1);
 				SiloContent.SetGridRow (0, columns);
 
-				VersionContent.SetGridColumn (1, 1);
-				VersionContent.SetGridRow (0, columns);
+				//VersionContent.SetGridColumn (1, 1);
+				//VersionContent.SetGridRow (0, columns);
+
+				ActivationsContent.SetGridColumn (1, 1);
+				ActivationsContent.SetGridRow (0, columns);
 
 				CPUContent.SetGridColumn (2, 1);
 				CPUContent.SetGridRow (0, columns);
@@ -89,9 +92,6 @@ namespace DashboardClient.Views
 
 				GrainContent.SetGridColumn (4, 1);
 				GrainContent.SetGridRow (0, columns);
-
-				ActivationsContent.SetGridColumn (5, 1);
-				ActivationsContent.SetGridRow (0, columns);
 			}
 		}
 	}

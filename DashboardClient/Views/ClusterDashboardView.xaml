@@ -4,10 +4,9 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 	xmlns:local="clr-namespace:DashboardClient.Views;assembly=DashboardClient"
 	x:Class="DashboardClient.Views.ClusterDashboardView"
-	BackgroundColor="Black">
+	BackgroundColor="{StaticResource AppBackgroundColor}">
 
 	<ContentView.Resources>
-<!--    	<ResourceDictionary MergedWith="dark:DarkThemeResources">-->
     	<ResourceDictionary>
     		<Style TargetType="Label">
 				<Setter Property="TextColor" Value="Black"/>
@@ -28,14 +27,13 @@
 				<RowDefinition Height="*"/>
 			</Grid.RowDefinitions>
 
-			<local:ClusterView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+			<local:ClusterHeaderView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
 
 			<ContentView x:Name="ColumnHeaderView" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
-				HeightRequest="50" BackgroundColor="#7F7F7F">
+				HeightRequest="50" BackgroundColor="{StaticResource ButtonBackgroundColor}">
 
 				<Grid RowSpacing="0" ColumnSpacing="0">
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="*"/>
 						<ColumnDefinition Width="*"/>
 						<ColumnDefinition Width="*"/>
 						<ColumnDefinition Width="*"/>
@@ -47,15 +45,15 @@
 					</Grid.RowDefinitions>
 
 					<Label Grid.Column="0" Text="Silo" TextColor="White" VerticalTextAlignment="Center"/>
-					<Label Grid.Column="1" Text="Version" TextColor="White" VerticalTextAlignment="Center"/>
+<!--					<Label Grid.Column="1" Text="Version" TextColor="White" VerticalTextAlignment="Center"/>-->
+					<Label Grid.Column="1" Text="Grains" TextColor="White" VerticalTextAlignment="Center"/>
 					<Label Grid.Column="2" Text="CPU" TextColor="White" VerticalTextAlignment="Center"/>
 					<Label Grid.Column="3" Text="Memory" TextColor="White" VerticalTextAlignment="Center"/>
-					<Label Grid.Column="4" Text="Grains" TextColor="White" VerticalTextAlignment="Center"/>
-					<Label Grid.Column="5" Text="Activ." TextColor="White" VerticalTextAlignment="Center"/>
+					<Label Grid.Column="4" Text="Disk" TextColor="White" VerticalTextAlignment="Center"/>
 				</Grid>
 			</ContentView>
 
-			<Grid x:Name="ResourceSidebar" Grid.Row="2" Grid.Column="0" BackgroundColor="#7F7F7F" RowSpacing="0" Margin="0,2,0,0">
+			<Grid x:Name="ResourceSidebar" Grid.Row="2" Grid.Column="0" BackgroundColor="{StaticResource ButtonBackgroundColor}" RowSpacing="0" Margin="0,2,0,0">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="*"/>
 				</Grid.ColumnDefinitions>
@@ -65,15 +63,14 @@
 					<RowDefinition Height="*"/>
 					<RowDefinition Height="*"/>
 					<RowDefinition Height="*"/>
-					<RowDefinition Height="25"/>
 				</Grid.RowDefinitions>
 				
 				<Label Grid.Row="0" Text="Resource" TextColor="White" VerticalTextAlignment="Center"/>
-				<Label Grid.Row="1" Text="Version" TextColor="White" VerticalTextAlignment="Center"/>
+<!--				<Label Grid.Row="1" Text="Version" TextColor="White" VerticalTextAlignment="Center"/>-->
+				<Label Grid.Row="1" Text="Grains" TextColor="White" VerticalTextAlignment="Center"/>
 				<Label Grid.Row="2" Text="CPU" TextColor="White" VerticalTextAlignment="Center"/>
 				<Label Grid.Row="3" Text="Memory" TextColor="White" VerticalTextAlignment="Center"/>
-				<Label Grid.Row="4" Text="Grains" TextColor="White" VerticalTextAlignment="Center"/>
-				<Label Grid.Row="5" Text="Activ." TextColor="White" VerticalTextAlignment="Center"/>
+				<Label Grid.Row="4" Text="Disk" TextColor="White" VerticalTextAlignment="Center"/>
 			</Grid>
 
 			<ScrollView x:Name="SiloScrollView" Grid.Row="2" Grid.Column="1" Margin="0,2,0,0" Orientation="Horizontal" BackgroundColor="Black">

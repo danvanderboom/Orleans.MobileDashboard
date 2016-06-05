@@ -9,20 +9,11 @@ namespace DashboardClient
 	{
 		public App ()
 		{
-            //var bs = new Bootstrapper();
-            //bs.Run(this);
-
-            //this.MainPage = (Page)Container.Resolve(typeof(MasterPage), "MasterPage");
-
-            //MainPage = new MasterPage(Container);
         }
 
         protected override void OnInitialized()
         {
             InitializeComponent();
-
-			//NavigationService.Navigate("MainPage");
-			//NavigationService.NavigateAsync<MasterPage>();
 
 			MainPage = new MasterPage(Container);
 		}
@@ -48,4 +39,3 @@ namespace DashboardClient
         }
     }
 }
-

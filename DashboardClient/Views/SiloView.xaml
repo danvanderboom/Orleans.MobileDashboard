@@ -4,22 +4,25 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 	xmlns:local="clr-namespace:DashboardClient.Views;assembly=DashboardClient"
 	x:Class="DashboardClient.Views.SiloView"
-	BackgroundColor="Silver">
+	BackgroundColor="{StaticResource SiloBackgroundColor}">
 
 	<ContentView.Resources>
 		<ResourceDictionary>
+			
 			<Style TargetType="Label">
 				<Setter Property="TextColor" Value="Black"/>
 				<Setter Property="VerticalTextAlignment" Value="Center"/>
 				<Setter Property="HorizontalTextAlignment" Value="Center"/>
 			</Style>
+
+			<Color x:Key="SiloHeaderBackgroundColor">Green</Color>
+			<Color x:Key="SiloBackgroundColor">#808080</Color>
 		</ResourceDictionary>
 	</ContentView.Resources>
 	
 	<ContentView.Content>
 		<Grid x:Name="RootGrid" RowSpacing="0" ColumnSpacing="0">
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="*"/>
 				<ColumnDefinition Width="*"/>
 				<ColumnDefinition Width="*"/>
 				<ColumnDefinition Width="*"/>
@@ -32,15 +35,18 @@
 				<RowDefinition Height="*"/>
 				<RowDefinition Height="*"/>
 				<RowDefinition Height="*"/>
-				<RowDefinition Height="25"/>
 			</Grid.RowDefinitions>
 
-			<ContentView x:Name="SiloContent" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" BackgroundColor="Gray">
+			<ContentView x:Name="SiloContent" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" BackgroundColor="{StaticResource HealthyGreen}">
 				<Label Text="Silo" StyleClass="Header"/>
 			</ContentView>
 
-			<ContentView x:Name="VersionContent" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5">
+			<!--<ContentView x:Name="VersionContent" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5">
 				<Label Text="1.2.3"/>
+			</ContentView>-->
+
+			<ContentView x:Name="ActivationsContent" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" Padding="8">
+				<Label Text="12,345" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
 			</ContentView>
 			
 			<ContentView x:Name="CPUContent" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="5" Padding="8">
@@ -55,9 +61,6 @@
 				<local:HealthIndicatorView/>
 			</ContentView>
 
-			<ContentView x:Name="ActivationsContent" Grid.Row="5" Grid.Column="5" Grid.ColumnSpan="5" Padding="8">
-				<Label Text="12,345" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-			</ContentView>
 		</Grid>
 	</ContentView.Content>
 </ContentView>
