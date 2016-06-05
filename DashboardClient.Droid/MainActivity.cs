@@ -26,9 +26,9 @@ namespace DashboardClient.Droid
 			LoadApplication (new DashboardClient.App ());
 
 			// reference themes
-			var x = typeof (Xamarin.Forms.Themes.DarkThemeResources);
-			x = typeof (Xamarin.Forms.Themes.LightThemeResources);
-			x = typeof (Xamarin.Forms.Themes.Android.UnderlineEffect);
+			//var x = typeof (Xamarin.Forms.Themes.DarkThemeResources);
+			//x = typeof (Xamarin.Forms.Themes.LightThemeResources);
+			//x = typeof (Xamarin.Forms.Themes.Android.UnderlineEffect);
 		}
 	}
 }

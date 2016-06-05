@@ -2,13 +2,19 @@
 <ContentView 
 	xmlns="http://xamarin.com/schemas/2014/forms" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-	xmlns:dark="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Dark"
 	xmlns:local="clr-namespace:DashboardClient.Views;assembly=DashboardClient"
 	x:Class="DashboardClient.Views.ClusterMapView"
 	BackgroundColor="Black">
 
 	<ContentView.Resources>
-    	<ResourceDictionary MergedWith="dark:DarkThemeResources" />
+<!--    	<ResourceDictionary MergedWith="dark:DarkThemeResources" />-->
+		<ResourceDictionary>
+			<Style TargetType="Label">
+				<Setter Property="TextColor" Value="White"/>
+				<Setter Property="HorizontalTextAlignment" Value="Center"/>
+				<Setter Property="VerticalTextAlignment" Value="Center"/>
+			</Style>
+		</ResourceDictionary>
 	</ContentView.Resources>
 	
 	<ContentView.Content>
@@ -29,33 +35,33 @@
 				<!-- graph axis headers -->
 				
 				<ContentView Grid.Column="0">
-					<Label Text="Upgrade Domain" HorizontalTextAlignment="Center"/>
+					<Label Text="Upgrade Domain"/>
 				</ContentView>
 
 				<ContentView Grid.Column="1" Grid.ColumnSpan="5">
-					<Label Text="Fault Domains" HorizontalTextAlignment="Center"/>
+					<Label Text="Fault Domains"/>
 				</ContentView>
 
 				<!-- fault domain labels -->
 
 				<ContentView Grid.Row="1" Grid.Column="1">
-					<Label Text="fd:/0" HorizontalTextAlignment="Center"/>
+					<Label Text="fd:/0"/>
 				</ContentView>
 
 				<ContentView Grid.Row="1" Grid.Column="2">
-					<Label Text="fd:/1" HorizontalTextAlignment="Center"/>
+					<Label Text="fd:/1"/>
 				</ContentView>
 
 				<ContentView Grid.Row="1" Grid.Column="3">
-					<Label Text="fd:/2" HorizontalTextAlignment="Center"/>
+					<Label Text="fd:/2"/>
 				</ContentView>
 
 				<ContentView Grid.Row="1" Grid.Column="4">
-					<Label Text="fd:/3" HorizontalTextAlignment="Center"/>
+					<Label Text="fd:/3"/>
 				</ContentView>
 
 				<ContentView Grid.Row="1" Grid.Column="5">
-					<Label Text="fd:/4" HorizontalTextAlignment="Center"/>
+					<Label Text="fd:/4"/>
 				</ContentView>
 			</Grid>
 			
@@ -85,23 +91,23 @@
 					<!-- upgrade domain labels -->
 
 					<ContentView Grid.Row="2" Grid.Column="0">
-						<Label Text="0" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+						<Label Text="0"/>
 					</ContentView>
 
 					<ContentView Grid.Row="3" Grid.Column="0">
-						<Label Text="1" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+						<Label Text="1"/>
 					</ContentView>
 
 					<ContentView Grid.Row="4" Grid.Column="0">
-						<Label Text="2" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+						<Label Text="2"/>
 					</ContentView>
 
 					<ContentView Grid.Row="5" Grid.Column="0">
-						<Label Text="3" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+						<Label Text="3"/>
 					</ContentView>
 
 					<ContentView Grid.Row="6" Grid.Column="0">
-						<Label Text="4" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+						<Label Text="4" />
 					</ContentView>
 
 					<!-- node views -->

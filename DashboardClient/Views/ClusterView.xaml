@@ -6,8 +6,6 @@
 	x:Class="DashboardClient.Views.ClusterView"
 	BackgroundColor="#444444">
 
-	<!--xmlns:dark="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Dark"-->
-	
 	<ContentView.Resources>
 <!--    	<ResourceDictionary MergedWith="dark:DarkThemeResources">-->
     	<ResourceDictionary>

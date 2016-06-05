@@ -2,13 +2,12 @@
 <ContentView 
 	xmlns="http://xamarin.com/schemas/2014/forms" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-	xmlns:dark="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Dark"
 	xmlns:local="clr-namespace:DashboardClient.Views;assembly=DashboardClient"
 	x:Class="DashboardClient.Views.ClusterMapNodeView"
 	BackgroundColor="Black">
 
 	<ContentView.Resources>
-    	<ResourceDictionary MergedWith="dark:DarkThemeResources" />
+<!--    	<ResourceDictionary MergedWith="dark:DarkThemeResources" />-->
 	</ContentView.Resources>
 	
 	<ContentView.Content>
