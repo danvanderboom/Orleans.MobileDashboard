@@ -56,7 +56,6 @@
 				</ContentView>
 			</ContentView>
 
-
 			<ContentView Grid.Row="0" Grid.Column="1" BackgroundColor="White" Padding="2">
 				<ContentView BackgroundColor="{StaticResource MenuBackground}" Padding="2">
 					<Label Text="MenuBackground"/>
@@ -74,17 +73,6 @@
 					<Label Text="MenuButtonTextColor" TextColor="Black"/>
 				</ContentView>
 			</ContentView>
-			
-
-
-
-
-			
-
-
-
-
-
 		</Grid>
 	</ContentView.Content>
 </ContentView>
